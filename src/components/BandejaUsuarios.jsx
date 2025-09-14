@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const usuariosSimulados = [
   { id: 1, nombre: "Ana Perez", email: "ana@example.com", rol: "cliente" },
