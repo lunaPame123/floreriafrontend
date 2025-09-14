@@ -3,10 +3,20 @@ import React, { useState } from "react";
 const Login = ({ onLogin }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Aquí normalmente se validaría con backend
+        if (email && password) {
+            onLogin({ email }); // simulamos login exitoso
+        } else {
+            alert("Ingrese correo y contraseña");
+        }
+    };
   return (
     <div style={{ maxWidth: "400px", margin: "auto", paddingTop: "50px" }}>
       <h2>Iniciar Sesión</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>
           <input 
